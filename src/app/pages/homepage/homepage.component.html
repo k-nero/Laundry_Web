@@ -1,0 +1,95 @@
+<div class="wrapper">
+  <mat-toolbar style="display: flex; justify-content: space-between">
+    <div>
+      <span>Welcome {{ name }}!</span>
+    </div>
+    <div>
+      <button mat-button (click)="goToHome()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </button>
+      <button mat-button (click)="goToOrder()">Order</button>
+      <button mat-button (click)="goToAbout()">About</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="account_circle"></mat-icon>
+      </button>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+        <button mat-menu-item (click)="goToProfile()">
+          <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="badge"></mat-icon>Profile
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="logout"></mat-icon>Log out
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+  <div class="landing-content">
+    <section class="product-intro">
+      <h2>DELIVERY LAUNDRY SERVICE</h2>
+      <p>
+        We provide laundry service in your home or office.
+        <br>
+      </p>
+      <button type="button" (click)="goToOrder()">ORDER</button>
+    </section>
+
+    <section class="features">
+      <h1 style="text-align: center;">Outstanding</h1>
+      <div class="feature-container">
+        <div class="feature-image">
+          <img src="https://th.bing.com/th/id/OIP.QsOTGxW375bT9-OmgFqPAgHaHa?pid=ImgDet&rs=1" alt="Product Image" />
+        </div>
+        <div class="feature-content">
+          <div class="feature">
+            <div class="text">
+              <h2>CONVENIENT & FAST</h2>
+              <p>Delivered to your door, received on time</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="text">
+              <h2>PERFORMANCE & QUALITY</h2>
+              <p>Clean clothes, regular laundry service</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="text">
+              <h2>TRANSPARENT & ACCURATE</h2>
+              <p>Honest work, transparent payment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="product-images"></section>
+
+    <section class="contact">
+      <div class="contact-info col-md-3" style="display: flex; flex-direction: column">
+        <h2>Contact Us</h2>
+        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="location_on"
+            style="font-size: 24px"></mat-icon> 123, Địa chỉ 2, Quận 1, Tp. HCM</p>
+        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="phone"
+            style="font-size: 24px"></mat-icon> 123-456-7890</p>
+        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="email"
+            style="font-size: 24px"></mat-icon> 8l4I6gmail.com</p>
+      </div>
+      <div class="contact-follow col-md-3" style="display: flex; flex-direction: column">
+        <h2>Follow</h2>
+        <p>Follow us on social media for more updates</p>
+        <div class="social-icons" style="display: flex; justify-content: space-evenly; color: white">
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style="font-size: 24px"></i></a>
+          <a href="https://twitter.com/"><i class="fa fa-twitter" style="font-size: 24px"></i></a>
+          <a href="https://www.instagram.com/"><i class="fa fa-instagram" style="font-size: 24px"></i></a>
+        </div>
+      </div>
+      <div class="contact-form col-md-6">
+        <h2>Subscribe</h2>
+        <form>
+          <label>Email</label>
+          <input class="form-control" type="email" placeholder="Enter your email">
+          <button type="button" class="btn btn-secondary"
+            style="color: white; background-color: #FF4081; border: 2px solid #FF4081; margin-top: 10px">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>

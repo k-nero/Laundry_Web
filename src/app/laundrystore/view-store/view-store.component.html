@@ -1,0 +1,76 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Edit Profile</h4>
+                    </div>
+                    <div class="content">
+                        <form >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Laundry Store Name:</label>
+                                        <p>{{selectLaundry.data.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Address:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Address"
+                                               [value]="selectLaundry?.data?.address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Create Time:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Company"
+                                               [value]="selectLaundry?.data?.createdTime">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Create By:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Last Name"
+                                               [value]="selectLaundry?.data?.createdBy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Update Time:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Company"
+                                               [value]="selectLaundry?.data?.lastUpdatedTime">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Update By:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Last Name"
+                                               [value]="selectLaundry?.data?.lastUpdatedBy">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Status:</label>
+                                        <input type="text" class="form-control" disabled placeholder="Home Address" [value]="selectLaundry?.data?.status">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

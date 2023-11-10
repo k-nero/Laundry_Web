@@ -1,0 +1,58 @@
+<div class="wrapper" style="
+  background-image: linear-gradient(rgba(47, 47, 47, 0.75), rgba(47, 47, 47, 0.75)), url(https://wallpaperaccess.com/full/1196559.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ">
+  <div style="text-align: center">
+    <h1 style="color: white">Choose payment method</h1>
+  </div>
+  <div class="card" style="
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px;
+      width: 400px;
+      border-radius: 10px;
+    ">
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12" style="display: flex; justify-content: space-around">
+            <div class="cash">
+              <a routerLink="/directly" style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                ">
+                <img
+                  src="https://th.bing.com/th/id/R.0224af792ecb5e60401eb9faa5ef0de4?rik=8W19PG4IQ9kSsA&riu=http%3a%2f%2fwww.andreadams.com%2fassets%2fthumbnails%2fmoney_1_THUMB.jpg&ehk=WD%2bqPpA4UBXVEH5EGJ6G4cPStaJJYwTz%2ffZXord0WiU%3d&risl=&pid=ImgRaw&r=0"
+                  style="width: 200px; height: 100px" />
+                <h4 style="color: #03A9F4">Tiền Mặt</h4>
+              </a>
+            </div>
+            <div class="ewallet">
+              <a routerLink="/order" style="
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                "><img src="https://jacwater.com/wp-content/uploads/2019/09/navcard2.png"
+                  style="width: 200px; height: 100px" />
+                <h4 style="color: #03A9F4">E-Wallet</h4>
+              </a>
+            </div>
+          </div>
+          <button class="btn btn-secondary" (click)="goHomePage()" style="color: #FF4081; border: 2px solid #FF4081">
+            Back
+          </button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

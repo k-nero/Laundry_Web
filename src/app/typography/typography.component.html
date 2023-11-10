@@ -1,0 +1,68 @@
+<!-- <mat-table [dataSource]="stores.data">
+    
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Address">
+      <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.address}} </mat-cell>
+    </ng-container>
+  
+    
+     <ng-container matColumnDef="Status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.status ? 'Active' : 'Inactive'}} </mat-cell>
+    </ng-container>
+  
+    
+    <mat-header-row *matHeaderRowDef="['Name', 'Address', 'Status']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['id', 'name', 'address']"></mat-row>
+  </mat-table> -->
+
+
+  <div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                      <div class="header-title">
+                        <h4 class="title">Striped Table with Hover</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                      </div>
+                        <div class="header-buttons">
+                          <!-- Add button in the header -->
+                          <button class="add-button">Add</button>
+                        </div>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                      <ng-container *ngFor="let colName of ['name', 'address', 'startTime', 'status']">
+                                        <th>{{ colName }}</th>
+                                      </ng-container>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of stores.data">
+                                      <td>{{ row.name }}</td>
+                                      <td>{{ row.address }}</td>
+                                      <td>{{ row.startTime | date:'medium' }}</td>
+                                      <td>{{ row.status ? 'Active' : 'Inactive' }}</td>
+                                      <td class="action-buttons">
+                                        <button class="detail-button" (click)="viewDetail(row)">Detail</button>
+                                        <button class="update-button" (click)="updateRow(row)">Update</button>
+                                        <button class="delete-button" (click)="deleteRow(row)">Delete</button>
+                                      </td>
+                                    </tr>
+                                </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div
+  class="wrapper"
+  style="display: flex; justify-content: center; align-items: center"
+>
+  <div
+    class="card"
+    style="
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px;
+      width: 400px;
+      border-radius: 10px;
+    "
+  >
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div style="text-align: center">
+              <p><i class="fa-solid fa-circle-check"></i></p>
+              <h1 style="color: green">Payment Successful</h1>
+            </div>
+            <hr />
+            <div>
+              <p style="display: flex; justify-content: space-between">
+                Order Date:<span>{{
+                  orderDetails.data.createdTime | date : "dd/MM/yyyy HH:mm a"
+                }}</span>
+              </p>
+              <p style="display: flex; justify-content: space-between">
+                Expected Finish Date:<span>{{
+                  orderDetails.data.expectedFinishDate
+                    | date : "dd/MM/yyyy HH:mm a"
+                }}</span>
+              </p>
+              <p style="display: flex; justify-content: space-between">
+                Address:<span>{{ orderDetails.data.address }}</span>
+              </p>
+              <p style="display: flex; justify-content: space-between">
+                Amount:<span>{{ orderDetails.data.amount }}</span>
+              </p>
+              <p style="display: flex; justify-content: space-between">
+                Delivery Time Frame:<span>{{
+                  getDeliveryTimeFrameString(
+                    orderDetails.data.deliveryTimeFrame
+                  )
+                }}</span>
+              </p>
+              <p style="display: flex; justify-content: space-between">
+                Payment Method:<span>Direct payment</span>
+              </p>
+              <hr />
+              <p
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-weight: bold;
+                "
+              >
+                Total Price:<span>${{ orderDetails.data.totalPrice }}</span>
+              </p>
+            </div>
+            <hr />
+            <button class="btn btn-secondary" (click)="goToHomePage()">
+              Back to Home
+            </button>
+            <button
+              class="btn btn-info btn-fill pull-right"
+              (click)="goToProfile()"
+            >
+              Profile
+            </button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

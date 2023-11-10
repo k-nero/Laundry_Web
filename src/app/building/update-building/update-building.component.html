@@ -1,0 +1,59 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Edit Profile</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="updateBuildingForm" (ngSubmit)="updateBuildingById()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>ID cửa hàng:</label>
+                                        <input type="text" class="form-control"  placeholder="Ví dụ: superstore123"
+                                               formControlName="name">
+<!--                                               [value]="selectBuilding?.data?.name">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ:</label>
+                                        <input type="text" class="form-control"  placeholder="Ví dụ: 29, Đào Trí"
+                                               formControlName="address">
+<!--                                               [value]="selectBuilding?.data?.address">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ:</label>
+                                        <input type="text" class="form-control"  placeholder="Ví dụ: 29, Đào Trí"
+                                               formControlName="description">
+<!--                                               [value]="selectBuilding?.data?.description">-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--                            <div class="row">
+                                                            <div class="col-md-12">
+                                                            <mat-radio-group aria-label="Select an option" formControlName="status" [(ngModel)]="statusModel" >
+                                                                <mat-label><b>Tình trạng:</b></mat-label>
+                                                                <mat-radio-button [value]="active">Hoạt Động</mat-radio-button>
+                                                                <mat-radio-button [value]="unactive">Ngừng Hoạt Động</mat-radio-button>
+                                                            </mat-radio-group>
+                                                            </div>
+                                                        </div>-->
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Cập nhật </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

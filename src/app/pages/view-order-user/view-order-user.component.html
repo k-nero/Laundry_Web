@@ -1,0 +1,72 @@
+<div class="wrapper" style="background-image: linear-gradient(rgba(47, 47, 47, 0.75), rgba(47, 47, 47, 0.75)), url(https://wallpaperaccess.com/full/1196559.jpg); background-size: cover; background-repeat: no-repeat; background-position: center center; display: flex; flex-direction: column; justify-content: center; align-items: center">
+  <h1 style="color: white; text-align: center">ORDER DETAIL</h1>
+  <div class="card"
+    style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding: 10px; width: 600px; border-radius: 10px;">
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">Order Date:</label>
+              <p>{{ order.orderDate | date : "dd/MM/yyyy HH:mm a" }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="amount">Expected Finish Date:</label>
+              <p>
+                {{ order.expectedFinishDate | date : "dd/MM/yyyy HH:mm a" }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <p>{{ order.address }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="amount">Amount:</label>
+              <p>{{ order.amount }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">Delivery Time Frame:</label>
+              <p>{{ getTimeFrameDescription(order.deliveryTimeFrame) }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="amount">Payment Method:</label>
+              <p>{{ getPaymentMethod(order.paymentType) }}</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">Status:</label>
+              <p>{{ getOrderStatus(orderHistory.orderStatus) }}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="amount">Total:</label>
+              <p style="color: red">${{ order.totalPrice }}</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <button class="btn btn-secondary" (click)="goToHome()">Back</button>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

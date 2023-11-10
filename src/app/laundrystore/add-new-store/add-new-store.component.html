@@ -1,0 +1,55 @@
+<form [formGroup]="storeForm" (ngSubmit)="addStore()">
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="Ví dụ: example@gmail.com"
+        formControlName="email"
+      />
+    </mat-form-field>
+  </div>
+  <!-- Form controls -->
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Tên cửa hàng</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Ví dụ: Sao mai"
+        formControlName="name"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Địa chỉ</mat-label>
+      <input
+        matInput
+        placeholder="Ví dụ: 29, Đào Trí"
+        formControlName="address"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Giờ mở cửa</mat-label>
+      <input matInput type="time" formControlName="startTime" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Giờ đóng cửa</mat-label>
+      <input matInput type="time" formControlName="endTime" />
+    </mat-form-field>
+  </div>
+
+  <!-- Form actions -->
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Hủy
+    </button>
+    <button mat-raised-button color="primary" type="submit">Thêm</button>
+  </div>
+</form>

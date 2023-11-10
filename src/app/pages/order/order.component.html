@@ -1,0 +1,417 @@
+<!-- <div class="wrapper">
+  <mat-toolbar style="display: flex; justify-content: space-between">
+    <div>
+      <span>Please fill order here, {{ name }}!</span>
+    </div>
+    <div>
+      <button mat-button (click)="goToHome()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="home"
+        ></mat-icon>
+      </button>
+      <button mat-button (click)="goToOrder()">Order</button>
+      <button mat-button>About</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example user icon"
+          fontIcon="account_circle"
+        ></mat-icon>
+      </button>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+        <button mat-menu-item>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example user icon"
+            fontIcon="badge"
+          ></mat-icon
+          >Profile
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example user icon"
+            fontIcon="logout"
+          ></mat-icon
+          >Log out
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+  <div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>
+            Your E-Wallet Balance: <span style="color: red">{{ ewallet }}</span>
+          </h2>
+          <div class="card">
+            <div class="header">
+              <h2 class="title">Order</h2>
+            </div>
+            <div class="content">
+              <form (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="deliveryTime">Thời gian đặt giao:</label>
+                      <input
+                        type="datetime-local"
+                        class="form-control"
+                        id="deliveryTimeInput"
+                        name="deliveryTime"
+                        required
+                        [(ngModel)]="deliveryTime"
+                        (change)="calculateEstimatedCompletionTime()"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="estimatedCompletionTime"
+                        >Thời gian dự kiến hoàn thành:</label
+                      >
+                      <input
+                        type="datetime-local"
+                        class="form-control"
+                        id="estimatedCompletionTimeInput"
+                        name="estimatedCompletionTime"
+                        required
+                        [(ngModel)]="estimatedCompletionTime"
+                        (change)="accessEstimatedCompletionTime()"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="address">Địa chỉ:</label>
+                      <textarea
+                        class="form-control"
+                        id="address"
+                        name="address"
+                        rows="4"
+                        placeholder="Địa chỉ của bạn"
+                        required
+                        [value]="buildingAddress"
+                        [disabled]="true"
+                        [(ngModel)]="buildingAddress"
+                        (change)="accessAddress()"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="quantity">Số lượng:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="quantity"
+                        name="quantity"
+                        [(ngModel)]="quantity"
+                        required
+                        min="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="returnTime">Chọn thời điểm trả hàng:</label>
+                      <select
+                        class="form-control"
+                        id="returnTime"
+                        name="returnTime"
+                        required
+                        [(ngModel)]="returnTime"
+                        (ngModelChange)="accessReturnTimeValue()"
+                      >
+                        <option value="morning" [ngValue]="0">Morning</option>
+                        <option value="afternoon" [ngValue]="1">
+                          Afternoon
+                        </option>
+                        <option value="evening" [ngValue]="2">Night</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="paymentMethod"
+                        >Chọn hình thức thanh toán:</label
+                      >
+                      <select
+                        class="form-control"
+                        id="paymentMethod"
+                        name="paymentMethod"
+                        [(ngModel)]="paymentMethod"
+                        required
+                      >
+                        <option [ngValue]="0">Trực tiếp</option>
+                        <option [ngValue]="1">Ewallet</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="laundryStore">Chọn cửa hàng :</label>
+                        <select
+                          class="form-control"
+                          id="laundryStore"
+                          name="laundryStore"
+                          required
+                          [(ngModel)]="selectedLaundryStore"
+                        >
+                          <option value="30c7fc91-f62a-4952-80b3-5a6903f168bd">
+                            Bao Son
+                          </option>
+                          <option value="90486">Cari19</option>
+                          <option value="93349">Tomas</option>
+                          <option value="94660">Scottie784</option>
+                          <option value="99441">Alan7</option>
+                          <option value="56257">Laurie1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="totalAmount">Tổng tiền:</label>
+                      <p id="totalAmountDisplay" style="color: red">
+                        {{
+                          calculateTotalAmount()
+                            | currency : "USD" : "symbol" : "1.2-2"
+                        }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-secondary" (click)="goToHome()">
+                  Quay lại
+                </button> -->
+<!-- <button
+                  type="submit"
+                  class="btn btn-info btn-fill pull-right"
+                  (click)="submitCashPaymentForm()"
+                >
+                  Thanh toán
+                </button> -->
+<!-- <div #paymentRef></div>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+<div
+  style="background-image: linear-gradient(rgba(47, 47, 47, 0.75), rgba(47, 47, 47, 0.75)), url(https://wallpaperaccess.com/full/1196559.jpg); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+  <mat-toolbar style="display: flex; justify-content: space-between">
+    <div>
+      <span>Please fill order here, {{ name }}!</span>
+    </div>
+    <div>
+      <button mat-button (click)="goToHome()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </button>
+      <button mat-button (click)="goToOrder()">Order</button>
+      <button mat-button (click)="goToAbout()">About</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="account_circle"></mat-icon>
+      </button>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+        <button mat-menu-item (click)="goToProfile()">
+          <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="badge"></mat-icon>Profile
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="logout"></mat-icon>Log out
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+  <div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="text-align: center; color: white">
+            Your E-Wallet Balance: <span style="color: red">{{ ewallet }}</span>
+          </h2>
+          <h3 style="font-weight: bold; color: white">ORDER</h3>
+          <form (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
+            <div class="col-md-6">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="deliveryTime">Delivery booking time:</label>
+                        <input type="datetime-local" class="form-control" id="deliveryTimeInput" name="deliveryTime"
+                          required [(ngModel)]="deliveryTime" (change)="calculateEstimatedCompletionTime()" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="estimatedCompletionTime">Estimated time of completion:</label>
+                        <input type="datetime-local" class="form-control" id="estimatedCompletionTimeInput"
+                          name="estimatedCompletionTime" required [(ngModel)]="estimatedCompletionTime"
+                          (change)="accessEstimatedCompletionTime()" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="address">Địa chỉ:</label>
+                        <textarea class="form-control" id="address" name="address" rows="4"
+                          placeholder="Địa chỉ của bạn" required [value]="buildingAddress" [disabled]="true"
+                          [(ngModel)]="buildingAddress" (change)="accessAddress()"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="quantity">Amount:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="quantity"
+                          required min="1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="returnTime">Chọn thời điểm trả hàng:</label>
+                        <select class="form-control" id="returnTime" name="returnTime" required [(ngModel)]="returnTime"
+                          (ngModelChange)="accessReturnTimeValue()">
+                          <option value="morning" [ngValue]="0">Morning</option>
+                          <option value="afternoon" [ngValue]="1">
+                            Afternoon
+                          </option>
+                          <option value="evening" [ngValue]="2">Night</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="laundryStore">Chọn cửa hàng :</label>
+                        <select class="form-control" id="laundryStore" name="laundryStore" required
+                          [(ngModel)]="selectedLaundryStore">
+                          <option value="30c7fc91-f62a-4952-80b3-5a6903f168bd">
+                            Bao Son
+                          </option>
+                          <option value="90486">Cari19</option>
+                          <option value="93349">Tomas</option>
+                          <option value="94660">Scottie784</option>
+                          <option value="99441">Alan7</option>
+                          <option value="56257">Laurie1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="paymentMethod">Chọn hình thức thanh toán:</label>
+                        <select class="form-control" id="paymentMethod" name="paymentMethod" [(ngModel)]="paymentMethod"
+                          required>
+                          <option [ngValue]="0">Trực tiếp</option>
+                          <option [ngValue]="1">Ewallet</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="content">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="totalAmount">Tổng tiền:</label>
+                        <p id="totalAmountDisplay" style="color: red">
+                          {{
+                          calculateTotalAmount()
+                          | currency : "USD" : "symbol" : "1.2-2"
+                          }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group" style="display: flex; justify-content: space-between;">
+                    <button class="btn btn-secondary" (click)="goToHome()"
+                      style="color: white; background-color: #FF4081">
+                      Quay lại
+                    </button>
+                    <div #paymentRef style="width: 200px; height: 50px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

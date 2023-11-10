@@ -1,0 +1,82 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title">Xem tòa nhà</h2>
+                        <!-- <p class="category">Here is a subtitle for this table</p> -->
+                        <div class="header-buttons">
+                            <!-- Add button in the header -->
+                            <button class="edit-button" (click)="updateDetail(selectBuilding.data.id)"><i class="pe-7s-note"></i></button>
+                            <ng-template #content let-modal></ng-template>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <form >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>TÒA NHÀ:</label>
+                                        <p>{{selectBuilding.data.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>	ĐỊA CHỈ:</label>
+                                        <p>{{selectBuilding.data.address}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Create Time:</label>
+                                        <p>{{selectBuilding.data.createdTime | date: 'medium'}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Create By:</label>
+                                        <p>{{selectBuilding.data.createdBy}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Update Time:</label>
+                                        <p>{{selectBuilding.data.lastUpdatedTime | date: 'medium'}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Update By:</label>
+                                        <p>{{selectBuilding.data.lastUpdatedBy}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Last Name" [value]="selectLaundry?.data?.lastUpdatedBy">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>	MÔ TẢ:</label>
+                                        <p>{{selectBuilding.data.description}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Home Address" [value]="selectLaundry?.data?.status">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

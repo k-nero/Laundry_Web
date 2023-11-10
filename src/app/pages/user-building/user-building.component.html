@@ -1,0 +1,50 @@
+<div
+  class="wrapper"
+  style="display: flex; justify-content: center; align-items: center"
+>
+  <div
+    class="card"
+    style="
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px;
+      width: 400px;
+      position: relative;
+      border-radius: 10px;
+    "
+  >
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <form (ngSubmit)="onSubmit(orderForm)" #orderForm="ngForm">
+              <div class="col-md-12">
+                <label for="laundryStore">Chọn khu vực bạn đang ở :</label>
+                <select
+                  class="form-control"
+                  id="laundryStore"
+                  name="laundryStore"
+                  required
+                  [(ngModel)]="selectedOption"
+                >
+                  <option value="12413">Luz89</option>
+                  <option value="12745">Lena24</option>
+                  <option value="19344">Manuel5</option>
+                  <option value="89851">Jim</option>
+                  <option value="53763">Test</option>
+                </select>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="margin-top: 10px; position: relative; left: 240px"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

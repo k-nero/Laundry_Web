@@ -1,0 +1,91 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title">Xem cửa hàng</h2>
+                        <!-- <p class="category">Here is a subtitle for this table</p> -->
+                        <div class="header-buttons">
+                            <!-- Add button in the header -->
+                            <button class="edit-button" (click)="updateDetail(selectedOrder.data.id)"><i class="pe-7s-note"></i></button>
+                            <ng-template #content let-modal></ng-template>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <form >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên cửa hàng:</label>
+                                        <p>{{selectOrder.data.laundryStore.name}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>ĐỊA CHỈ cửa hàng:</label>
+                                        <p>{{selectOrder.data.laundryStore.address}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ:</label>
+                                        <p>{{selectOrder.data.address}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày đặt :</label>
+                                        <p>{{selectOrder.data.orderDate | date: 'medium'}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày dự kiến hoàn thành:</label>
+                                        <p>{{selectOrder.data.expectedFinishDate | date: 'medium'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày cập nhật cuối:</label>
+                                        <p>{{selectOrder.data.orderDate | date: 'medium'}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Người cập nhật:</label>
+                                        <p>{{selectOrder.data.lastUpdatedBy}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Last Name" [value]="selectLaundry?.data?.lastUpdatedBy">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group" >
+                                        <label>Cách thanh toán:</label>
+                                        <p>{{selectOrder.data.paymentType ? 'Tiền mặt' : 'Thanh toán online' }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" >
+                                        <label>Giá:</label>
+                                        <p>{{selectOrder.data.totalPrice}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

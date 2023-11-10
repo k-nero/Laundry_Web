@@ -1,0 +1,99 @@
+/* login.component.scss */
+/* Định dạng cho phần form */
+form {
+  max-width: 400px;
+  margin: 150px auto;
+  margin-top: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Định dạng cho tiêu đề */
+h1 {
+  text-align: center;
+  margin: 0 150px;
+  margin-top: 125px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Định dạng cho nhãn */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Định dạng cho input */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Định dạng cho các thông báo lỗi */
+.text-danger {
+  color: #d9534f;
+}
+
+/* Định dạng cho nút đăng nhập */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Định dạng cho liên kết đăng ký */
+.btn-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Định dạng cho nút Google sign-in */
+.btn-outline-dark {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-dark img {
+  margin-right: 10px;
+}
+
+/* login.component.scss */
+
+.or-separator {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or-text {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 10px;
+  color: #888;
+  font-weight: bold;
+}

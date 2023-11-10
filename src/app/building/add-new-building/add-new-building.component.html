@@ -1,0 +1,88 @@
+<div mat-dialog-title>
+  <h1>Thêm tòa nhà mới</h1>
+</div>
+<form [formGroup]="buildingForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Tên tòa nhà</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ví dụ: Sao mai"
+          required
+          formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Địa chỉ</mat-label>
+        <input
+          matInput
+          placeholder="Ví dụ: 29, Đào Trí"
+          required
+          formControlName="address"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Mô tả</mat-label>
+        <input
+          matInput
+          placeholder="Ví dụ: 29, Đào Trí"
+          formControlName="description"
+        />
+      </mat-form-field>
+    </div>
+
+    <!--
+                <div class="row">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Giờ mở cửa</mat-label>
+                        <input placeholder="12 tiếng" aria-label="12hr format" [ngxTimepicker]="default"
+                               readonly formControlName="startTime" >
+                        <ngx-material-timepicker #default></ngx-material-timepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Giờ đóng cửa</mat-label>
+                        <input placeholder="12 tiếng" aria-label="12hr format" [ngxTimepicker]="default"
+                               readonly formControlName="endTime" >
+                        <ngx-material-timepicker #default></ngx-material-timepicker>
+                    </mat-form-field>
+                </div>-->
+    <!--
+                <div class="row">
+                    <mat-radio-group aria-label="Select an option" formControlName="status">
+                        <mat-label><b>Tình trạng</b></mat-label>
+                        <mat-radio-button value="true">Hoạt động</mat-radio-button>
+                        <mat-radio-button value="false">Không hoạt động</mat-radio-button>
+                    </mat-radio-group>
+                </div>-->
+
+    <!--        <div class="row">-->
+    <!--            <mat-form-field appearance="outline">-->
+    <!--                <mat-label>Education</mat-label>-->
+    <!--                <mat-select formControlName="education">-->
+    <!--                    <mat-option *ngFor="let val of status" [value]="val">{{val}}-->
+    <!--                    </mat-option>-->
+    <!--                </mat-select>-->
+    <!--            </mat-form-field>-->
+    <!--        </div>-->
+    <!--        <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Experience</mat-label>
+                        <input matInput placeholder="Ex. 4" type="number" formControlName="experience">
+                    </mat-form-field>
+                </div>-->
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Hủy
+    </button>
+    <button mat-raised-button color="primary" type="submit">Thêm</button>
+  </div>
+</form>

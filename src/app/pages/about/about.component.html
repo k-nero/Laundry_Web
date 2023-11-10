@@ -1,0 +1,65 @@
+<mat-toolbar style="display: flex; justify-content: space-between">
+    <div>
+        <span>Give us feedback, {{ name }}!</span>
+    </div>
+    <div>
+        <button mat-button><mat-icon aria-hidden="false" aria-label="Example home icon"
+                fontIcon="home"></mat-icon></button>
+        <button mat-button (click)="goToOrder()">Order</button>
+        <button mat-button (click)="goToAbout()">About</button>
+        <button mat-button [matMenuTriggerFor]="afterMenu"><mat-icon aria-hidden="false" aria-label="Example user icon"
+                fontIcon="account_circle"></mat-icon></button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item (click)="goToProfile()"><mat-icon aria-hidden="false" aria-label="Example user icon"
+                    fontIcon="badge"></mat-icon>Profile</button>
+            <button mat-menu-item (click)="logout()"><mat-icon aria-hidden="false" aria-label="Example user icon"
+                    fontIcon="logout"></mat-icon>Log out</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+<div class="wrapper"
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center; background-image: linear-gradient(rgba(47, 47, 47, 0.75), rgba(47, 47, 47, 0.75)), url(https://www.cleaningbycarrie.com/wp-content/uploads/2021/01/laundry-service.jpg); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+    <h1 style="color: white; font-size: 50px; margin-bottom: 50px">About Us</h1>
+    <div class="card"
+        style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px; width: 800px;">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5" style="display: flex; flex-direction: column; padding: 20px">
+                        <h2 style="align-self: center">Contact Us</h2>
+                        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="location_on"
+                                style="font-size: 24px"></mat-icon> 123, Địa chỉ 2, Quận 1, Tp. HCM</p>
+                        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="phone"
+                                style="font-size: 24px"></mat-icon> 123-456-7890</p>
+                        <p><mat-icon aria-hidden="false" aria-label="Example user icon" fontIcon="email"
+                                style="font-size: 24px"></mat-icon> 8l4I6gmail.com</p>
+                        <hr>
+                        <div class="social-icons" style="display: flex; justify-content: space-evenly">
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook-square"
+                                    style="font-size: 24px"></i></a>
+                            <a href="https://twitter.com/"><i class="fa fa-twitter" style="font-size: 24px"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram"
+                                    style="font-size: 24px"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-7"
+                        style="background-color: #03A9F4; border-radius: 20px 10px 10px 20px; padding: 20px;">
+                        <h2 style="align-content: center; color: white;">Contact Form</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="name" style="color: white">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" style="color: white">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-fill pull-right"
+                                style="color: white; background-color: #FF4081">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

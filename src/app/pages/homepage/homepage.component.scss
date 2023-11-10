@@ -1,0 +1,137 @@
+/* Để giữ cho sidebar cố định và có scrollbar nếu nội dung quá dài */
+
+
+/* Tùy chỉnh màu nền của header */
+mat-toolbar {
+  background-color: #0288D1;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Tùy chỉnh phần giới thiệu sản phẩm */
+.product-intro {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://www.cleaningbycarrie.com/wp-content/uploads/2021/01/laundry-service.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 100px 0;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.product-intro h2 {
+  font-size: 60px;
+  /* Đặt kích thước cho tiêu đề */
+  margin-bottom: 100px;
+  /* Tạo khoảng cách giữa tiêu đề và nội dung */
+  font-weight: bold;
+}
+
+.product-intro button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #FF4081;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-intro buton:hover {
+  border: none;
+}
+
+.product-intro p {
+  width: 600px;
+  font-size: 18px;
+  /* Đặt kích thước cho nội dung */
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+
+
+/* Tùy chỉnh phần các tính năng nổi bật */
+.features {
+  background-image: linear-gradient(rgba(47, 47, 47, 0.75), rgba(47, 47, 47, 0.75)), url(https://wallpaperaccess.com/full/1196559.jpg);
+  padding: 50px;
+  height: 600px;/* Để căn giữa theo chiều dọc */
+  color: white;
+}
+
+.feature-container {
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  width: 100%;
+}
+
+.feature-image {
+  width: 40%;
+  text-align: center;
+}
+
+.feature-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Canh giữa theo chiều ngang */
+  align-items: center;
+}
+
+.feature {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.feature text {
+  width: 100%;
+}
+
+/* Tùy chỉnh phần hình ảnh sản phẩm */
+.product-images {
+  height: 400px;
+  background-image: url(https://res.cloudinary.com/upsie/image/upload/f_auto,q_auto/v1667843644/Blog/1200x400-appliance-lg-vs-whirlpool-234-v1.jpg);
+  // text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  background-color: #0288D1;
+  color: white;
+  padding: 20px;
+}

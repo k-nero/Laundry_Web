@@ -1,0 +1,88 @@
+/* Add some spacing to the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  /* Style the buttons container */
+  .header-buttons {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+  }
+  
+  /* Style the Add button */
+  .add-button {
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  /* Style the other buttons if needed */
+  .header-buttons button {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  /* Add hover effect */
+  .header-buttons button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Style the Detail button */
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 220px; /* Set a maximum width for the container */
+    padding-right: 8px;
+    margin: 0 auto; /* Center the container */
+  }
+
+.detail-button {
+    background-color: #3498db; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Add padding */
+    font-size: 14px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  /* Style the Update button */
+  .update-button {
+    background-color: #f39c12; /* Orange background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Add padding */
+    font-size: 14px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  /* Style the Delete button */
+  .delete-button {
+    background-color: #e74c3c; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Add padding */
+    font-size: 14px; /* Set font size */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 5px; /* Add border radius */
+  }
+  
+  /* Add hover effect */
+  .detail-button:hover,
+  .update-button:hover,
+  .delete-button:hover {
+    opacity: 0.8;
+  }

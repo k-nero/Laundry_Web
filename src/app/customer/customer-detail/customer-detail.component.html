@@ -1,0 +1,133 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h2 class="title">Xem chi tiết khách hàng</h2>
+                        <!-- <p class="category">Here is a subtitle for this table</p> -->
+                        <div class="header-buttons">
+                            <!-- Add button in the header -->
+                            <!--                            <button class="edit-button" (click)="updateDetail(selectLaundry.data.id)"><i class="pe-7s-note"></i></button>-->
+                            <ng-template #content let-modal></ng-template>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <form >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên:</label>
+                                        <p>{{selectCustomer.data.applicationUser.name}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên:</label>
+                                        <p>{{selectCustomer.data.applicationUser.name}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Địa chỉ:</label>
+                                        <p>{{selectCustomer.data.building.address}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày tạo:</label>
+                                        <p>{{selectCustomer.data.createdTime | date:"medium"}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tạo bởi:</label>
+                                        <p>{{selectCustomer.data.createdBy}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày cập nhật cuối:</label>
+                                        <p>{{selectCustomer.data.lastUpdatedTime | date:"medium"}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Cập nhật bởi:</label>
+                                        <p>{{selectCustomer.data.lastUpdatedBy}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Last Name" [value]="selectLaundry?.data?.lastUpdatedBy">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <p>{{selectCustomer.data.applicationUser.email}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Home Address" [value]="selectLaundry?.data?.status">-->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <p>{{selectCustomer.data.applicationUser.wallet.balance}}</p>
+
+                                        <!--                                        <input type="text" class="form-control" disabled placeholder="Home Address" [value]="selectLaundry?.data?.status">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Số điện thoại:</label>
+                                        <p>{{selectCustomer.data.applicationUser.phoneNumber}}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                    </div>
+                    <div class="content">
+                        <div class="author">
+                            <a href="#">
+                                <img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
+
+                                <h4 class="title">Mike Andrew<br />
+                                    <small>michael24</small>
+                                </h4>
+                            </a>
+                        </div>
+                        <p class="description text-center"> "Lamborghini Mercy <br>
+                            Your chick she so thirsty <br>
+                            I'm in that two seat Lambo"
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                        <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                        <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

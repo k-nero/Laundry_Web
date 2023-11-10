@@ -1,0 +1,57 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Danh sách khách hàng</h4>
+            <p class="category">Danh sách tất cả khách hàng</p>
+
+            <!-- <button
+              (click)="openLinkCustomerForm()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Liên kết tài khoản với các Tòa nhà
+            </button> -->
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <ng-container
+                    *ngFor="
+                      let colName of [
+                        'Tên khách hàng',
+                        'Tên tòa nhà',
+                        'Địa chỉ',
+                        'Số dư ví',
+                        'Xem chi tiết'
+                      ]
+                    "
+                  >
+                    <th>{{ colName }}</th>
+                  </ng-container>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of customerData.data.items">
+                  <td>{{ row.applicationUser.name }}</td>
+                  <td>{{ row.building.name }}</td>
+                  <td>{{ row.building.address }}</td>
+                  <td>{{ row.applicationUser.wallet.balance }}</td>
+                  <td class="action-buttons">
+                    <button class="detail-button" (click)="viewDetail(row.id)">
+                      <i class="pe-7s-note"></i>
+                    </button>
+                    <!-- <button class="delete-button" (click)="deleteCustomer(row.id)"><i class="pe-7s-trash"></i></button> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

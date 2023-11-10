@@ -1,0 +1,61 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Order Table</h4>
+            <!-- <p class="category">Here is a subtitle for this table</p> -->
+            <!--     <div class="header-buttons">
+                            &lt;!&ndash; Add button in the header &ndash;&gt;
+                            <button class="add-button" (click)="addRow()">Add</button>
+                        </div>-->
+            <!-- <button class="add-button" (click)="openAddOrderForm()"><i class="pe-7s-plus">
+                        </i>Thêm đơn hàng mới
+                        </button> -->
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <ng-container
+                    *ngFor="
+                      let colName of [
+                        'Giờ đặt',
+                        'Giờ hoàn thành',
+                        'Giá thành',
+                        'Xem chi tiết'
+                      ]
+                    "
+                  >
+                    <th>{{ colName }}</th>
+                  </ng-container>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of orderData.data.items">
+                  <!-- <td>{{ row.id }}</td> -->
+                  <td>{{ row.orderDate | date : "medium" }}</td>
+                  <td>{{ row.expectedFinishDate | date : "medium" }}</td>
+                  <td>{{ row.totalPrice }}</td>
+                  <td class="action-buttons">
+                    <!--                                    <a routerLink="/laundry-store/{{ row.id }}"><button class="detail-button" (click)="viewDetail(row.id)">Detail</button></a>-->
+                    <button class="detail-button" (click)="viewDetail(row.id)">
+                      <i class="pe-7s-note"></i>
+                    </button>
+                    <!-- <button
+                      class="delete-button"
+                      (click)="deleteOrderById(row.id)"
+                    >
+                      <i class="pe-7s-trash"></i>
+                    </button> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
