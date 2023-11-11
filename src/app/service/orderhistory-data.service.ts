@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class OrderhistoryDataService {
-    private orderHistoryUrl = 'https://13.212.24.193/api/v1/order-historys/';
+    private orderHistoryUrl = 'https://13.212.24.193/api/v1/order-histories/';
 
     constructor(private http: HttpClient) { }
 
